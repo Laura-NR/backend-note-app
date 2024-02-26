@@ -11,8 +11,9 @@ export class NoteController {
   async create(req, res) {
     console.log('noteController create');
     const dbConnection = await this.createDBConnection();
-    const sql = 'INSERT INTO note (text, category) VALUES (?, ?)';
-    const [results, fields] = await dbConnection.query(sql, [req.body.text, req.body.category]); // Pass both text and category to the query
+    const currentDate = new Date(); //Get current date and time
+    const sql = 'INSERT INTO note (text, category, date) VALUES (?, ?, ?)';
+    const [results, fields] = await dbConnection.query(sql, [req.body.text, req.body.category, currentDate]); // Pass both text and category to the query
     res.json({ message: "note added to database" });
   }
 
