@@ -14,6 +14,8 @@ router.post('/', function(req, res) {
   noteController.create(req, res);
 });
 
+router.put('/:id', (req, res) => noteController.update(req, res));
+
 router.delete('/:id', function(req, res) {
   noteController.destroy(req, res);
 });

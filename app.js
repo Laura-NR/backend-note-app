@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // Initialisation du Router
 app.use('/notes', notesRouter);
 app.use('/users', usersRouter);
-app.use('/', (req, res) => res.send('la bienvenue!'));
+//app.use('/', (req, res) => res.send('la bienvenue!'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
